@@ -1,0 +1,52 @@
+<DiagramKiosk_Coffee>
+
+# 순서도
+(1) PickUp or UnPickUp 화면
+ : 소개 및 매장 혹은 포장에 대한 질문
+(2) 메뉴판 화면
+ : 큰 틀의 음료 및 디저트 메뉴와 오더(장바구니, 주문 취소) 메뉴
+(3) 상품 메뉴 화면
+ : 각 음료 및 디저트 별 세부 메뉴 및 가격 -> 선택
+(4) 구매 화면
+ : 장바구니에 추가할 건지 질문(Yes/No) -> (2) 메뉴판 화면 이동
+(5) 주문 화면
+ : 주문 내역 및 전체 금액 보여주며, 결제를 할 지 더 주문을 할 지 질문
+(6) 주문 완료 화면
+ : 주문이 완료되었다는 문구 표시와 함께 대기번호 출력 -> 3초 후 (1) 화면 이동
+(*) 주문 취소 화면
+ : 진행하던 주문을 취소할 건지 질문(Yes/No)
+   Yes -> (1) 화면 이동
+   No -> (2) 화면 이동
+
+1. Main Class
+ - Main.java 생성
+ - Kiosk Program 돌리기 위함
+
+2. Kiosk Class
+ - 메뉴 소개 전 인사 및 픽업/매장이용 안내
+
+3. OrderCancel Class
+ - 주문 및 주문확인
+
+4. MenuList Class
+ - 메뉴판 화면
+ - 주문확인, 주문취소
+
+5. Coffee Class
+ - 커피 종류 명시
+ - Americano, CafeLatte, Cappuccino, Einspanner, ...
+ - Ice/Hot 선택
+
+6. Tea Class
+ - 티 종류 명시
+ - HubTea, LemonTea, EarlGreyTea, MilkTea, ...
+ - Ice/Hot 선택
+
+7. Ade Class
+ - 에이드 종류 명시
+ - OrangeAde, PeachAde, LemonAde, GreenGrapeAde, ...
+ - Cider/SparklingWater 선택
+
+8. Bread Class
+ - 빵 종류 명시
+ - OriginalBagel, CreamCheeseBagel, OriginalMuffin, ChocolateMuffin, ...
