@@ -1,5 +1,10 @@
 <DiagramKiosk_Coffee>
 
+- 메뉴 클래스는 이름, 설명 필드를 가지는 클래스로 만들어주세요.
+- 상품 클래스는 이름, 가격, 설명 필드를 가지는 클래스로 만들어주세요.
+- 상품 클래스의 이름, 가격 필드는 메뉴 클래스를 상속받아 사용하는 구조로 개발해주세요.
+- 주문 클래스도 만들어서 상품 객체를 담을 수 있도록 해주세요.
+
 # 순서도
 (1) PickUp or UnPickUp 화면
  : 소개 및 매장 혹은 포장에 대한 질문
@@ -21,32 +26,33 @@
 1. Main Class
  - Main.java 생성
  - Kiosk Program 돌리기 위함
+ =>
 
-2. Kiosk Class
+2. Menu Class
  - 메뉴 소개 전 인사 및 픽업/매장이용 안내
-
-3. OrderCancel Class
- - 주문 및 주문확인
-
-4. MenuList Class
  - 메뉴판 화면
  - 주문확인, 주문취소
+ =>
 
-5. Coffee Class
+3. Order Class
+ - 주문 및 주문확인
+ =>
+
+4. Product Class
+ (Coffee)
  - 커피 종류 명시
  - Americano, CafeLatte, Cappuccino, Einspanner, ...
  - Ice/Hot 선택
-
-6. Tea Class
+ (Tea)
  - 티 종류 명시
  - HubTea, LemonTea, EarlGreyTea, MilkTea, ...
  - Ice/Hot 선택
-
-7. Ade Class
+ (Ade)
  - 에이드 종류 명시
  - OrangeAde, PeachAde, LemonAde, GreenGrapeAde, ...
  - Cider/SparklingWater 선택
-
-8. Bread Class
+ (Bread)
  - 빵 종류 명시
  - OriginalBagel, CreamCheeseBagel, OriginalMuffin, ChocolateMuffin, ...
+
+ =>
