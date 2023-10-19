@@ -1,4 +1,4 @@
-package homwerk01_Kiosk;
+package homework01_Kiosk;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,16 +15,17 @@ public class Order {
         Scanner sc = new Scanner(System.in);
         int input;
 
-        if (product.getSizeupPrice() != 0) { //사이즈업 옵션이 있을때
+        if (product.getDrinkTemperate() != 0) { //사이즈업 옵션이 있을때
             product.Show();// 메뉴 | W 가격 | 이름
-            Product sizeupProduct = new Product(product.getName(), product.getDescription(), product.getSizeupPrice(), product.getCategory());
+            Product drinkTemperateProduct = new Product(product.getName(), product.getDescription(), product.getDrinkTemperate(), product.getCategory());
+            System.out.println();
             System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
-            System.out.println("1. Single(W " + product.getPrice() + ")          2. Double(W " + sizeupProduct.getPrice() + ")");
+            System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + drinkTemperateProduct.getPrice() + ")");
             input = sc.nextInt();
             if (input == 1) { //기본 사이즈
                 question(product);
             } else if (input == 2) {//사이즈업
-                question(sizeupProduct);
+                question(drinkTemperateProduct);
             }
         } else
             question(product);
@@ -33,14 +34,17 @@ public class Order {
         Scanner sc = new Scanner(System.in);
         int input;
         product.Show();
+        System.out.println();
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1.확인          2.취소");
         input = sc.nextInt();
         if (input == 1) {//장바구니 추가
             System.out.println(product.getName() + "가 장바구니에 추가되었습니다.");
+            System.out.println();
             shoppingBag.add(product);
         } else if (input == 2) {
             System.out.println("장바구니에 추가하지 않았습니다.");
+            System.out.println();
         }
     }
     public double getShoppingBag(){//쇼핑백 내용 보여주기, 가격 return

@@ -1,4 +1,4 @@
-package homwerk01_Kiosk;
+package ex_BergerKiosk;
 
 import java.util.ArrayList;
 import java.util.Scanner;

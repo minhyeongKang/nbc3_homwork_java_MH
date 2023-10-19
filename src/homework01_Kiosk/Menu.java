@@ -1,24 +1,23 @@
-package homework01;
+package homework01_Kiosk;
 
-public class Tea {
-
+public class Menu {
     private String name;
-    private String price;
     private String description;
 
-    public Tea(String name, String price, String description) {
+    public Menu(String name, String description) {
         this.name = name;
-        this.price = price;
         this.description = description;
     }
 
     public String getName() {
         return name;
     }
-    public String getPrice() {
-        return price;
-    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void Show() {
+        System.out.printf("%-15s | %s\n", name, description);
     }
 }
