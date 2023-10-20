@@ -141,6 +141,7 @@ public class Device {
             System.out.println(list.get(input - 1).getName() + " 선택하셨습니다.");
             System.out.println();
         } else if (input == numbering) {//Order주문하기 선택 시
+            System.out.println();
             System.out.println("아래와 같이 주문하시겠습니까?");
             System.out.println("[ Orders ]");
             totalPrice = order.getShoppingBag(); //장바구니에 담긴 내용물을 보여주고, 총가격 리턴받음

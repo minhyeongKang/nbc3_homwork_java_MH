@@ -35,8 +35,8 @@ public class Product extends Menu {
     }
 
     @Override
-    public void Show() { System.out.printf("%-20s | W %s | W %s\n", getName(), price, drinkTemperate); }
-    public void Show(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), price, EA, drinkTemperate); }
+    public void Show() { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
+    public void Show(int EA) { System.out.printf("%-20s | W %s | %s개 | %s\n", getName(), price, EA, getDescription()); }
 
 
     //equals, hashcode 재정의
