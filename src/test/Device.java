@@ -1,4 +1,4 @@
-package ex_BergerKiosk;
+package test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,58 +11,56 @@ public class Device {
     private double revenue;
 
     public void LoadMenu() { //카테고리메뉴와 상품메뉴를 리스트에 담기
-        Menu burgersMenu = new Menu("Burgers", "앵거스 비프 통살을 다져만든 버거");
-        Menu frozencustardMenu = new Menu("Frozen Custard", "매장에서 신선하게 만드는 아이스크림");
-        Menu drinksMenu = new Menu("Drinks", "매장에서 직접 만드는 음료");
-        Menu beerMenu = new Menu("Beer", "뉴욕 브루클린 브루어리에서 양조한 맥주");
-        categoryMenu.add(burgersMenu);
-        categoryMenu.add(frozencustardMenu);
-        categoryMenu.add(drinksMenu);
-        categoryMenu.add(beerMenu);
+        Menu coffeeMenu = new Menu("Coffee", "과테말라 원두를 갈아 만든 커피");
+        Menu teaMenu = new Menu("Tea", "풍부한 향을 가진 티");
+        Menu adeMenu = new Menu("Ade", "생과일을 갈아 넣어 톡쏘는 에이드");
+        Menu breadMenu = new Menu("Bread", "직접 반죽해 오븐으로 구운 빵");
+        categoryMenu.add(coffeeMenu);
+        categoryMenu.add(teaMenu);
+        categoryMenu.add(adeMenu);
+        categoryMenu.add(breadMenu);
 
-        Product shackBurger = new Product("ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거", 6.9, 10.9,"Burgers");
-        Product smokeShack = new Product("SmokeShack", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거", 8.9, 12.9,"Burgers");
-        Product shroomBurger = new Product("Shroom Burger", "몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거", 9.4, "Burgers");
-        Product cheeseBurger = new Product("Cheeseburger", "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거", 6.9,10.9, "Burgers");
-        Product hamBurger = new Product("Hamburger", "비프패티를 기반으로 야채가 들어간 기본버거", 6.9,9.0, "Burgers");
-        allProducts.add(shackBurger);
-        allProducts.add(smokeShack);
-        allProducts.add(shroomBurger);
-        allProducts.add(cheeseBurger);
-        allProducts.add(hamBurger);
+        Product americano = new Product("Americano", "진한 향과 맛을 가진 커피", 4.0, 4.5, 4.5, 5.0, "Coffee");
+        Product caffeMocha = new Product("CaffeMocha", "초코시럽이 들어간 커피", 5.0, 5.5, 5.5, 6.0, "Coffee");
+        Product cafeLatte = new Product("CafeLatte", "고소한 우유를 담은 커피", 5.0, 5.5, 5.5, 6.0, "Coffee");
+        Product cappuccino = new Product("Cappuccino", "몽글한 거품을 담은 커피", 5.0,5.5, 5.5, 6.0, "Coffee");
+        Product einspanner = new Product("Einspanner", "달달한 생크림을 담은 커피", 6.0,6.5, 6.5, 7.0, "Coffee");
+        allProducts.add(americano);
+        allProducts.add(caffeMocha);
+        allProducts.add(cafeLatte);
+        allProducts.add(cappuccino);
+        allProducts.add(einspanner);
 
-        Product shakes = new Product("Shakes", "바닐라, 초콜렛, 솔티드 카라멜, 블랙 & 화이트, 스트로베리, 피넛 버터, 커피", 5.9, "Frozen Custard");
-        Product shakeOfTheWeek = new Product("Shake of the Week", "특별한 커스터드 플레이버", 6.5, "Frozen Custard");
-        Product redBeanShake = new Product("Red Bean Shake", "신선한 커스터드와 함께 우유와 레드빈이 블렌딩 된 시즈널 쉐이크", 6.5, "Frozen Custard");
-        Product floats = new Product("Floats", "루트 비어, 퍼플 카우, 크림 시클", 5.9, "Frozen Custard");
-        Product cupsAndCones = new Product("Cups & Cones", "바닐라, 초콜렛, Flavor of the Week", 4.9,5.9, "Frozen Custard");
-        Product concretes = new Product("Concretes", "쉐이크쉑의 쫀득한 커스터드와 다양한 믹스-인의 조합", 5.9,8.9, "Frozen Custard");
-        Product shackAttack = new Product("Shack Attack", "초콜렛 퍼지소스, 초콜렛 트러플 쿠키, Lumiere 초콜렛 청크와 스프링클이 들어간 진한 초콜렛 커스터드", 5.9, "Frozen Custard");
-        allProducts.add(shakes);
-        allProducts.add(shakeOfTheWeek);
-        allProducts.add(redBeanShake);
-        allProducts.add(floats);
-        allProducts.add(cupsAndCones);
-        allProducts.add(concretes);
-        allProducts.add(shackAttack);
+        Product hubTea = new Product("HubTea", "진한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
+        Product greenTea = new Product("GreenTea", "보성에서 가져와 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
+        Product lemonTea = new Product("LemonTea", "상큼한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
+        Product earlGreyTea = new Product("EarlGreyTea", "진하고 풍부한 향과 맛을 우려낸 티", 5.0, 5.5, 5.5, 6.0, "Tea");
+        Product milkTea = new Product("MilkTea", "달콤한 향과 맛을 우려낸 티", 5.0,5.5, 5.5, 6.0, "Tea");
+        allProducts.add(hubTea);
+        allProducts.add(greenTea);
+        allProducts.add(lemonTea);
+        allProducts.add(earlGreyTea);
+        allProducts.add(milkTea);
 
-        Product shackmadeLemonade = new Product("Shack-made Lemonade", "매장에서 직접 만드는 상큼한 레몬에이드(오리지날/시즈널)", 3.9, "Drinks");
-        Product freshBrewedIcedTea = new Product("Fresh Brewed Iced Tea", "직접 유기농 홍차를 우려낸 아이스티", 3.4, "Drinks");
-        Product fiftyfifty = new Product("Fifty/Fifty", "레몬에이드와 아이스티의 만남", 3.5, "Drinks");
-        Product fountainSoda = new Product("Fountain Soda", "코카콜라, 코카콜라 제로, 스프라이트, 환타 오렌지, 환타 그레이프", 2.7, "Drinks");
-        Product abitaRootBeer = new Product("Abita Root Beer", "청량감 있는 독특한 미국식 무알콜 탄산음료", 4.4, "Drinks");
-        Product bottledWater = new Product("Bottled Water", "지리산 암반대수층으로 만든 프리미엄 생수", 1.0, "Drinks");
-        allProducts.add(shackmadeLemonade);
-        allProducts.add(freshBrewedIcedTea);
-        allProducts.add(fiftyfifty);
-        allProducts.add(fountainSoda);
-        allProducts.add(abitaRootBeer);
-        allProducts.add(bottledWater);
+        Product orangeAde = new Product("OrangeAde", "오랜지를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
+        Product peachAde = new Product("PeachAde", "복숭아를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
+        Product lemonAde = new Product("LemonAde", "레몬을 갈아 넣은 에이드", 5.5, 6.0, "Ade");
+        Product strawberryAde = new Product("StrawberryAde", "딸기를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
+        Product greenGrapeAde = new Product("GreenGrapeAde", "청포도를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
+        allProducts.add(orangeAde);
+        allProducts.add(peachAde);
+        allProducts.add(lemonAde);
+        allProducts.add(strawberryAde);
+        allProducts.add(greenGrapeAde);
 
-        Product shackMeisterAle = new Product("ShackMeister Ale", "쉐이크쉑 버거를 위해 뉴욕 브루클린 브루어리에서 특별히 양조한 에일 맥주", 9.8, "Beer");
-        Product magpieBrewingCo = new Product("Magpie Brewing Co.", "설명 없음", 6.8, "Beer");
-        allProducts.add(shackMeisterAle);
-        allProducts.add(magpieBrewingCo);
+        Product originalBagel = new Product("OriginalBagel", "촉촉하게 구운 베이글", 4.0, "Bread");
+        Product creamCheeseBagel = new Product("CreamCheeseBagel", "촉촉함에 크림치즈를 더한 베이글", 4.5, "Bread");
+        Product originalMuffin = new Product("OriginalMuffin", "부드럽게 구운 머핀", 3.0, "Bread");
+        Product chocolateMuffin = new Product("ChocolateMuffin", "부드러움에 초코를 더한 머핀", 3.5, "Bread");
+        allProducts.add(originalBagel);
+        allProducts.add(creamCheeseBagel);
+        allProducts.add(originalMuffin);
+        allProducts.add(chocolateMuffin);
     }
 
     public void Display() throws InterruptedException {
@@ -93,9 +91,10 @@ public class Device {
 
     public int ShowMenu() { //메뉴판
         int numbering = 1;
-        System.out.println("\"SHAKESHACK BURGER 에 오신 걸 환영합니다.\"");
+        System.out.println("\"SPARTA CAFE 에 오신 걸 환영합니다.\"");
         System.out.println("아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
-        System.out.println("[ SHAKESHACK MENU ]");
+        System.out.println();
+        System.out.println("[ SPARTA MENU ]");
         for (Menu item : categoryMenu) { // 카테고리 보여주기 categoryMenu -  Arraylist.
             System.out.print(numbering + ". ");//번호매김 1. 2. 3. (카테고리 추가를 고려하여 numbering 사용)
             item.Show();
@@ -108,8 +107,9 @@ public class Device {
         int numbering = 1;
         String menuName;
         categoryProduct.clear(); // 이전 카테고리메뉴가 남아 있을 시 지우기
-        System.out.println("\"SHAKESHACK BURGER 에 오신 걸 환영합니다.\"");
+        System.out.println("\"SPARTA CAFE 에 오신 걸 환영합니다.\"");
         System.out.println("아래 상품 메뉴판을 보시고 메뉴를 골라 입력해주세요.");
+        System.out.println();
         menuName = categoryMenu.get(selectCategoryNum - 1).getName(); //선택한 카테고리명 가져오기
         System.out.println("[ " + menuName + " MENU ]");
         for (Product item : allProducts) { //전체 상품에서 선택한 카테고리의 상품들을 뽑아오기
@@ -123,6 +123,7 @@ public class Device {
         return numbering;
     }
     public void ShowOption(int numbering) { //옵션 메뉴
+        System.out.println();
         System.out.println("[ ORDER MENU ]");
         System.out.printf(numbering + ". %-15s | %s\n", "Order", "장바구니를 확인 후 주문을 완료합니다.");
         System.out.printf(numbering + 1 + ". %-15s | %s\n", "Cancel", "진행중인 주문을 취소합니다.");
@@ -138,15 +139,19 @@ public class Device {
         input = sc.nextInt();
         if (1 <= input && input < numbering) { //카테고리 범위 내 번호 선택 시 - select
             System.out.println(list.get(input - 1).getName() + " 선택하셨습니다.");
+            System.out.println();
         } else if (input == numbering) {//Order주문하기 선택 시
+            System.out.println();
             System.out.println("아래와 같이 주문하시겠습니까?");
             System.out.println("[ Orders ]");
             totalPrice = order.getShoppingBag(); //장바구니에 담긴 내용물을 보여주고, 총가격 리턴받음
+            System.out.println();
             System.out.println("[ Total ]");
             System.out.println("W " + totalPrice + "\n");
             System.out.println("1. 주문     2. 메뉴판");
             optionInput = sc.nextInt();
             if (optionInput == 1 && totalPrice !=0) {
+                System.out.println("-------------------------------------------------");
                 System.out.println("주문이 완료되었습니다!");
                 System.out.println("대기번호는 [ " + order.CompleteOrder() + " ]번 입니다."); //장바구니를 비우고, 대기번호 리턴받음
                 revenue +=totalPrice; // 주문한 가격만큼 수익에 계산

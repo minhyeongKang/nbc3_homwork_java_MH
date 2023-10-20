@@ -1,4 +1,4 @@
-package ex_BergerKiosk;
+package test;
 
 public class Menu {
     private String name;

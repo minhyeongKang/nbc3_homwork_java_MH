@@ -1,4 +1,4 @@
-package homwork01_Kiosk;
+package test;
 
 import java.util.Objects;
 

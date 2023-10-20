@@ -1,4 +1,4 @@
-package ex_BergerKiosk;
+package homework01_Kiosk;
 
 import java.util.Objects;
 
@@ -8,41 +8,35 @@ public class Product extends Menu {
     //상품 클래스는 이름, 가격, 설명 필드를 가지는 클래스로 만들어주세요.
     //상품 클래스의 이름, 설명 필드는 메뉴 클래스를 상속받아 사용하는 구조로 개발해주세요.
     private double price;
-    private double sizeupPrice;
+    private double drinkTemperate;
     private String category;
 
     public Product(String name, String description, double price, String category) {
         super(name, description);
         this.price = price;
         this.category = category;
-        this.sizeupPrice = 0;
+        this.drinkTemperate = 0;
     }
-    public Product(String name, String description, double price, double sizeupPrice, String category)
+    public Product(String name, String description, double price, double drinkTemperate, String category)
     {
         super(name, description);
         this.price = price;
-        this.sizeupPrice = sizeupPrice;
+        this.drinkTemperate = drinkTemperate;
         this.category = category;
     }
     public double getPrice() {
         return price;
     }
-    public double getSizeupPrice(){
-        return sizeupPrice;
+    public double getDrinkTemperate(){
+        return drinkTemperate;
     }
     public String getCategory(){
         return category;
     }
 
     @Override
-    public void Show()
-    {
-        System.out.printf("%-20s | W %s |%s\n", getName(), price,getDescription());
-    }
-    public void Show(int EA)
-    {
-        System.out.printf("%-20s | W %s | %s개 |%s\n", getName(), price,EA,getDescription());
-    }
+    public void Show() { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
+    public void Show(int EA) { System.out.printf("%-20s | W %s | %s개 | %s\n", getName(), price, EA, getDescription()); }
 
 
     //equals, hashcode 재정의
@@ -54,13 +48,13 @@ public class Product extends Menu {
             Product temp = (Product)obj;
             return this.getName().equals(temp.getName()) &&
                     this.getPrice() == temp.getPrice() &&
-                    this.getSizeupPrice() == temp.getSizeupPrice() &&
+                    this.getDrinkTemperate() == temp.getDrinkTemperate() &&
                     this.getDescription().equals(temp.getDescription()) &&
                     this.getCategory().equals(temp.getCategory());
         }
         return false;
     }
     public int hashCode(){
-        return Objects.hash(getName(),getDescription(),getPrice(),getSizeupPrice(),getCategory());
+        return Objects.hash(getName(),getDescription(),getPrice(),getDrinkTemperate(),getCategory());
     }
 }

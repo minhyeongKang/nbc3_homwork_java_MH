@@ -1,4 +1,4 @@
-package ex_BergerKiosk;
+package test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,19 +13,39 @@ public class Order {
 
     public void AddOrder(Product product) {
         Scanner sc = new Scanner(System.in);
-        int input;
+        int firstInput;
+        int secondInput = 0;
 
-        if (product.getSizeupPrice() != 0) { //사이즈업 옵션이 있을때
-            product.Show();// 메뉴 | W 가격 | 이름
-            Product sizeupProduct = new Product(product.getName(), product.getDescription(), product.getSizeupPrice(), product.getCategory());
+        if (product.getDrinkTemperate() != 0) { // HOT or ICE 옵션이 있을때
+            product.Show(); // 메뉴 | W 가격 | 이름
+            Product drinkTemperateProduct = new Product(product.getName(), product.getDescription(), product.getDrinkTemperate(), product.getTemperateSizeUp(), product.getCategory());
+            System.out.println();
             System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
-            System.out.println("1. Single(W " + product.getPrice() + ")          2. Double(W " + sizeupProduct.getPrice() + ")");
-            input = sc.nextInt();
-            if (input == 1) { //기본 사이즈
-                question(product);
-            } else if (input == 2) {//사이즈업
-                question(sizeupProduct);
-            }
+            System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + product.getDrinkTemperate() + ")");
+            firstInput = sc.nextInt();
+            if (firstInput == 1) { // HOT 음료
+                System.out.println("사이즈 업을 하시겠습니까?");
+                System.out.println("1. M(W " + product.getPrice() + ")          2. L(W " + product.getPriceSizeUp() + ")");
+                secondInput = sc.nextInt();
+                if (secondInput == 1) {
+                    //product.getPrice();
+                    product.Show();
+                } else if (secondInput == 2) {
+                    //product.getPriceSizeUp();
+                    product.ShowPriceSizeUp();
+                }
+            } else if (firstInput == 2) { // ICE 음료
+                System.out.println("음료 사이즈를 골라주세요.");
+                System.out.println("1. M(W " + product.getDrinkTemperate() + ")          2. L(W " + product.getTemperateSizeUp() + ")");
+                secondInput = sc.nextInt();
+                if (secondInput == 1) {
+                    //product.getPriceSizeUp();
+                    product.ShowDrinkTemperate();
+                } else if (secondInput == 2) {
+                    //product.getTemperateSizeUp();
+                    product.ShowTemperateSizeUp();
+                }
+            } question(product);
         } else
             question(product);
     }
@@ -33,14 +53,17 @@ public class Order {
         Scanner sc = new Scanner(System.in);
         int input;
         product.Show();
+        System.out.println();
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1.확인          2.취소");
         input = sc.nextInt();
         if (input == 1) {//장바구니 추가
             System.out.println(product.getName() + "가 장바구니에 추가되었습니다.");
+            System.out.println();
             shoppingBag.add(product);
         } else if (input == 2) {
             System.out.println("장바구니에 추가하지 않았습니다.");
+            System.out.println();
         }
     }
     public double getShoppingBag(){//쇼핑백 내용 보여주기, 가격 return

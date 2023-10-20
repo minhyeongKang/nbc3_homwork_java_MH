@@ -1,4 +1,4 @@
-package homwork01_Kiosk;
+package homework01_Kiosk;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,33 +20,33 @@ public class Device {
         categoryMenu.add(adeMenu);
         categoryMenu.add(breadMenu);
 
-        Product americano = new Product("Americano", "진한 향과 맛을 가진 커피", 4.0, 4.5, 4.5, 5.0, "Coffee");
-        Product caffeMocha = new Product("CaffeMocha", "초코시럽이 들어간 커피", 5.0, 5.5, 5.5, 6.0, "Coffee");
-        Product cafeLatte = new Product("CafeLatte", "고소한 우유를 담은 커피", 5.0, 5.5, 5.5, 6.0, "Coffee");
-        Product cappuccino = new Product("Cappuccino", "몽글한 거품을 담은 커피", 5.0,5.5, 5.5, 6.0, "Coffee");
-        Product einspanner = new Product("Einspanner", "달달한 생크림을 담은 커피", 6.0,6.5, 6.5, 7.0, "Coffee");
+        Product americano = new Product("Americano", "진한 향과 맛을 가진 커피", 4.0, 4.5,"Coffee");
+        Product caffeMocha = new Product("CaffeMocha", "초코시럽이 들어간 커피", 5.0, 5.5,"Coffee");
+        Product cafeLatte = new Product("CafeLatte", "고소한 우유를 담은 커피", 5.0, 5.5, "Coffee");
+        Product cappuccino = new Product("Cappuccino", "몽글한 거품을 담은 커피", 5.0,5.5, "Coffee");
+        Product einspanner = new Product("Einspanner", "달달한 생크림을 담은 커피", 6.0,6.5, "Coffee");
         allProducts.add(americano);
         allProducts.add(caffeMocha);
         allProducts.add(cafeLatte);
         allProducts.add(cappuccino);
         allProducts.add(einspanner);
 
-        Product hubTea = new Product("HubTea", "진한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
-        Product greenTea = new Product("GreenTea", "보성에서 가져와 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
-        Product lemonTea = new Product("LemonTea", "상큼한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
-        Product earlGreyTea = new Product("EarlGreyTea", "진하고 풍부한 향과 맛을 우려낸 티", 5.0, 5.5, 5.5, 6.0, "Tea");
-        Product milkTea = new Product("MilkTea", "달콤한 향과 맛을 우려낸 티", 5.0,5.5, 5.5, 6.0, "Tea");
+        Product hubTea = new Product("HubTea", "진한 향과 맛을 우려낸 티", 4.5, 5.0, "Tea");
+        Product greenTea = new Product("GreenTea", "보성에서 가져와 우려낸 티", 4.5, 5.0, "Tea");
+        Product lemonTea = new Product("LemonTea", "상큼한 향과 맛을 우려낸 티", 4.5, 5.0, "Tea");
+        Product earlGreyTea = new Product("EarlGreyTea", "진하고 풍부한 향과 맛을 우려낸 티", 5.0, 5.5, "Tea");
+        Product milkTea = new Product("MilkTea", "달콤한 향과 맛을 우려낸 티", 5.0,5.5, "Tea");
         allProducts.add(hubTea);
         allProducts.add(greenTea);
         allProducts.add(lemonTea);
         allProducts.add(earlGreyTea);
         allProducts.add(milkTea);
 
-        Product orangeAde = new Product("OrangeAde", "오랜지를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
-        Product peachAde = new Product("PeachAde", "복숭아를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
-        Product lemonAde = new Product("LemonAde", "레몬을 갈아 넣은 에이드", 5.5, 6.0, "Ade");
-        Product strawberryAde = new Product("StrawberryAde", "딸기를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
-        Product greenGrapeAde = new Product("GreenGrapeAde", "청포도를 갈아 넣은 에이드", 5.5, 6.0, "Ade");
+        Product orangeAde = new Product("OrangeAde", "오랜지를 갈아 넣은 에이드", 5.5, "Ade");
+        Product peachAde = new Product("PeachAde", "복숭아를 갈아 넣은 에이드", 5.5, "Ade");
+        Product lemonAde = new Product("LemonAde", "레몬을 갈아 넣은 에이드", 5.5, "Ade");
+        Product strawberryAde = new Product("StrawberryAde", "딸기를 갈아 넣은 에이드", 5.5, "Ade");
+        Product greenGrapeAde = new Product("GreenGrapeAde", "청포도를 갈아 넣은 에이드", 5.5, "Ade");
         allProducts.add(orangeAde);
         allProducts.add(peachAde);
         allProducts.add(lemonAde);
@@ -141,7 +141,6 @@ public class Device {
             System.out.println(list.get(input - 1).getName() + " 선택하셨습니다.");
             System.out.println();
         } else if (input == numbering) {//Order주문하기 선택 시
-            System.out.println();
             System.out.println("아래와 같이 주문하시겠습니까?");
             System.out.println("[ Orders ]");
             totalPrice = order.getShoppingBag(); //장바구니에 담긴 내용물을 보여주고, 총가격 리턴받음
