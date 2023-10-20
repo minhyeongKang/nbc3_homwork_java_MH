@@ -1,4 +1,4 @@
-package homework01_Kiosk;
+package homework01_Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,16 +15,16 @@ public class Order {
         Scanner sc = new Scanner(System.in);
         int input;
 
-        if (product.getDrinkTemperate() != 0) { //사이즈업 옵션이 있을때
+        if (product.getDrinkTemperate() != 0) { // HOT or ICE 옵션이 있을때
             product.Show();// 메뉴 | W 가격 | 이름
             Product drinkTemperateProduct = new Product(product.getName(), product.getDescription(), product.getDrinkTemperate(), product.getCategory());
             System.out.println();
             System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
-            System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + drinkTemperateProduct.getPrice() + ")");
+            System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + product.getDrinkTemperate() + ")");
             input = sc.nextInt();
-            if (input == 1) { //기본 사이즈
+            if (input == 1) { // HOT 음료
                 question(product);
-            } else if (input == 2) {//사이즈업
+            } else if (input == 2) { // ICE 음료
                 question(drinkTemperateProduct);
             }
         } else
@@ -38,7 +38,7 @@ public class Order {
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1.확인          2.취소");
         input = sc.nextInt();
-        if (input == 1) {//장바구니 추가
+        if (input == 1) { // 장바구니 추가
             System.out.println(product.getName() + "가 장바구니에 추가되었습니다.");
             System.out.println();
             shoppingBag.add(product);
@@ -47,7 +47,7 @@ public class Order {
             System.out.println();
         }
     }
-    public double getShoppingBag(){//쇼핑백 내용 보여주기, 가격 return
+    public double getShoppingBag(){ //쇼핑백 내용 보여주기, 가격 return
         double totalprice = 0;
         int EA;
         HashSet<Product> productCountSet = new HashSet<Product>(shoppingBag);
@@ -56,7 +56,7 @@ public class Order {
             item.Show(EA);
             totalprice += item.getPrice() * EA; //가격계산
         }
-        totalprice=Math.round((totalprice*100))/100.0;//소수점 둘째자리까지 나타내고 반올림 ( 자바는 IEEE 754 부동 소수점 방식 - 근사치 제공에 의해 소수 오차 발생 방지)
+        totalprice=Math.round((totalprice*100))/100.0; //소수점 둘째자리까지 나타내고 반올림 ( 자바는 IEEE 754 부동 소수점 방식 - 근사치 제공에 의해 소수 오차 발생 방지)
         return totalprice;
     }
     public int CompleteOrder() {

@@ -1,4 +1,4 @@
-package homework01_Kiosk;
+package homework01_Test;
 
 import java.util.ArrayList;
 import java.util.Scanner;

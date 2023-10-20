@@ -1,4 +1,4 @@
-package homework01_Kiosk;
+package homework01_Test;
 
 import java.util.Objects;
 
@@ -35,14 +35,8 @@ public class Product extends Menu {
     }
 
     @Override
-    public void Show()
-    {
-        System.out.printf("%-20s | W %s | W %s\n", getName(), price, getDrinkTemperate());
-    }
-    public void Show(int EA)
-    {
-        System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), price, EA, getDrinkTemperate());
-    }
+    public void Show() { System.out.printf("%-20s | W %s | W %s\n", getName(), price, drinkTemperate); }
+    public void Show(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), price, EA, drinkTemperate); }
 
 
     //equals, hashcode 재정의
