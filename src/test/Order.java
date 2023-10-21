@@ -14,11 +14,12 @@ public class Order {
     public void AddOrder(Product product) {
         Scanner sc = new Scanner(System.in);
         int firstInput;
-        int secondInput = 0;
+        int secondInput;
 
         if (product.getDrinkTemperate() != 0) { // HOT or ICE 옵션이 있을때
             product.Show(); // 메뉴 | W 가격 | 이름
-            Product drinkTemperateProduct = new Product(product.getName(), product.getDescription(), product.getDrinkTemperate(), product.getTemperateSizeUp(), product.getCategory());
+            Product drinkTemperateProduct = new Product(product.getName(), product.getDescription(),product.getDrinkTemperate(),
+                                                        product.getTemperateSizeUp(), product.getCategory());
             System.out.println();
             System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
             System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + product.getDrinkTemperate() + ")");
@@ -28,22 +29,18 @@ public class Order {
                 System.out.println("1. M(W " + product.getPrice() + ")          2. L(W " + product.getPriceSizeUp() + ")");
                 secondInput = sc.nextInt();
                 if (secondInput == 1) {
-                    //product.getPrice();
-                    product.Show();
+                    drinkTemperateProduct.Show();
                 } else if (secondInput == 2) {
-                    //product.getPriceSizeUp();
-                    product.ShowPriceSizeUp();
+                    drinkTemperateProduct.Show();
                 }
             } else if (firstInput == 2) { // ICE 음료
                 System.out.println("음료 사이즈를 골라주세요.");
                 System.out.println("1. M(W " + product.getDrinkTemperate() + ")          2. L(W " + product.getTemperateSizeUp() + ")");
                 secondInput = sc.nextInt();
                 if (secondInput == 1) {
-                    //product.getPriceSizeUp();
-                    product.ShowDrinkTemperate();
+                    drinkTemperateProduct.Show();
                 } else if (secondInput == 2) {
-                    //product.getTemperateSizeUp();
-                    product.ShowTemperateSizeUp();
+                    drinkTemperateProduct.Show();
                 }
             } question(product);
         } else
@@ -52,7 +49,7 @@ public class Order {
     public void question (Product product) {
         Scanner sc = new Scanner(System.in);
         int input;
-        product.Show();
+        //product.Show();
         System.out.println();
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1.확인          2.취소");

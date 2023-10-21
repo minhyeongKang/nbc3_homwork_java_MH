@@ -1,10 +1,11 @@
-package test;
+package test2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Device {
     private Order order = new Order();
+
     private ArrayList<Menu> categoryMenu = new ArrayList<Menu>(); // 카테고리 메뉴판
     private ArrayList<Product> allProducts = new ArrayList<Product>(); // 전체상품
     private ArrayList<Product> categoryProduct = new ArrayList<Product>(); // 카테고리 상품 메뉴판
@@ -89,6 +90,7 @@ public class Device {
         }
     }
 
+
     public int ShowMenu() { //메뉴판
         int numbering = 1;
         System.out.println("\"SPARTA CAFE 에 오신 걸 환영합니다.\"");
@@ -125,7 +127,7 @@ public class Device {
     public void ShowOption(int numbering) { //옵션 메뉴
         System.out.println();
         System.out.println("[ ORDER MENU ]");
-        System.out.printf(numbering + ". %-15s | %s\n", "Order", "장바구니를 확인 후 주문을 완료합니다.");
+        System.out.printf(numbering + ". %-15s | %s\n", "Order","장바구니를 확인 후 주문을 완료합니다.");
         System.out.printf(numbering + 1 + ". %-15s | %s\n", "Cancel", "진행중인 주문을 취소합니다.");
     }
 
@@ -144,10 +146,10 @@ public class Device {
             System.out.println();
             System.out.println("아래와 같이 주문하시겠습니까?");
             System.out.println("[ Orders ]");
-            totalPrice = order.getShoppingBag(); //장바구니에 담긴 내용물을 보여주고, 총가격 리턴받음
+            totalPrice = order.getShoppingBag();//장바구니에 담긴 내용물을 보여주고, 총가격 리턴받음
             System.out.println();
             System.out.println("[ Total ]");
-            System.out.println("W " + totalPrice + "\n");
+            System.out.println("W " + totalPrice  + "\n");
             System.out.println("1. 주문     2. 메뉴판");
             optionInput = sc.nextInt();
             if (optionInput == 1 && totalPrice !=0) {

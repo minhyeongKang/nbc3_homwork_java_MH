@@ -1,4 +1,4 @@
-package test;
+package test2;
 
 import java.util.Objects;
 
@@ -46,10 +46,17 @@ public class Product extends Menu {
 
     @Override
     public void Show() { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
-//    public void ShowPrice(double price) { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
+    public void HotSizeUp() { System.out.printf("%-20s | W %s | %s\n", getName(), priceSizeUp, getDescription()); }
+    public void IceShow() { System.out.printf("%-20s | W %s | %s\n", getName(), drinkTemperate, getDescription()); }
+    public void IceSizeUp() { System.out.printf("%-20s | W %s | %s\n", getName(), temperateSizeUp, getDescription()); }
+    //    public void ShowPrice(double price) { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
 //    public void ShowDrinkTemperate(double priceSizeUp) { System.out.printf("%-20s | W %s | %s\n", getName(), priceSizeUp, getDescription()); }
 //    public void ShowTemperateSizeUp(double temperateSizeUp) { System.out.printf("%-20s | W %s | %s\n", getName(), temperateSizeUp, getDescription()); }
     public void Show(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), price, EA, getDescription()); }
+    public void HotSizeUp(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), priceSizeUp, EA,getDescription()); }
+    public void IceShow(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), drinkTemperate, EA,getDescription()); }
+    public void IceSizeUp(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), temperateSizeUp, EA,getDescription()); }
+
 
 
     //equals, hashcode 재정의
