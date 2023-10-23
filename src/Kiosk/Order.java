@@ -1,4 +1,4 @@
-package test2;
+package Kiosk;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -133,7 +133,7 @@ public class Order {
             System.out.println();
         }
     }
-    public double getShoppingBag(){//쇼핑백 내용 보여주기, 가격 return
+    public double getShoppingBag(){ //쇼핑백 내용 보여주기, 가격 return
         double totalprice = 0;
         int EA;
         HashSet<Product> productCountSet = new HashSet<Product>(shoppingBag);
@@ -180,11 +180,9 @@ public class Order {
     public void SoldList(){
         System.out.println("[ 총 판매상품 목록 현황 ]");
         System.out.println("현재까지 총 판매된 상품 목록은 아래와 같습니다.");
-        for(Product item : soldProduct){
-            System.out.printf("%-20s | W %s\n",item.getName(), item.getPrice());
 
+        for(Product item : soldProduct) {
+            System.out.printf("%-20s | W %s\n", item.getName(), item.getPrice());
         }
-
-
     }
 }

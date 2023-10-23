@@ -1,4 +1,4 @@
-package homework01_Kiosk;
+package test01;
 
 public class Menu {
     private String name;

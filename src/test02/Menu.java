@@ -1,4 +1,4 @@
-package test2;
+package test02;
 
 public class Menu {
     private String name;

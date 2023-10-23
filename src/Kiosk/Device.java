@@ -1,4 +1,4 @@
-package test2;
+package Kiosk;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,9 +32,9 @@ public class Device {
         allProducts.add(cappuccino);
         allProducts.add(einspanner);
 
-        Product hubTea = new Product("HubTea", "진한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
-        Product greenTea = new Product("GreenTea", "보성에서 가져와 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
-        Product lemonTea = new Product("LemonTea", "상큼한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 6.0, "Tea");
+        Product hubTea = new Product("HubTea", "진한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 5.5, "Tea");
+        Product greenTea = new Product("GreenTea", "보성에서 가져와 우려낸 티", 4.5, 5.0, 5.0, 5.5, "Tea");
+        Product lemonTea = new Product("LemonTea", "상큼한 향과 맛을 우려낸 티", 4.5, 5.0, 5.0, 5.5, "Tea");
         Product earlGreyTea = new Product("EarlGreyTea", "진하고 풍부한 향과 맛을 우려낸 티", 5.0, 5.5, 5.5, 6.0, "Tea");
         Product milkTea = new Product("MilkTea", "달콤한 향과 맛을 우려낸 티", 5.0,5.5, 5.5, 6.0, "Tea");
         allProducts.add(hubTea);

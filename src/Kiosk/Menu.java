@@ -1,4 +1,4 @@
-package test;
+package Kiosk;
 
 public class Menu {
     private String name;
