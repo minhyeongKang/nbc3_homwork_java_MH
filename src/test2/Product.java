@@ -8,9 +8,9 @@ public class Product extends Menu {
     //상품 클래스는 이름, 가격, 설명 필드를 가지는 클래스로 만들어주세요.
     //상품 클래스의 이름, 설명 필드는 메뉴 클래스를 상속받아 사용하는 구조로 개발해주세요.
     private double price;
-    private double drinkTemperate;
-    private double priceSizeUp;
-    private double temperateSizeUp;
+    private double drinkTemperature;
+    private double hotSizeUp;
+    private double iceSizUp;
     private String category;
 
     // Bread 관련 상품 내용
@@ -20,42 +20,39 @@ public class Product extends Menu {
         this.category = category;
     }
     // Ade 관련 상품 내용
-    public Product(String name, String description, double price, double priceSizeUp, String category)
+    public Product(String name, String description, double price, double hotSizeUp, String category)
     {
         super(name, description);
         this.price = price;
-        this.priceSizeUp = priceSizeUp;
+        this.hotSizeUp = hotSizeUp;
         this.category = category;
     }
     // Coffee, Tea 관련 상품 내용
-    public Product(String name, String description, double price, double drinkTemperate, double priceSizeUp, double temperateSizeUp, String category)
+    public Product(String name, String description, double price, double drinkTemperature, double hotSizeUp, double iceSizUp, String category)
     {
         super(name, description);
         this.price = price;
-        this.drinkTemperate = drinkTemperate;
-        this.priceSizeUp = priceSizeUp;
-        this.temperateSizeUp = temperateSizeUp;
+        this.drinkTemperature = drinkTemperature;
+        this.hotSizeUp = hotSizeUp;
+        this.iceSizUp = iceSizUp;
         this.category = category;
     }
 
     public double getPrice() { return price; }
-    public double getDrinkTemperate() { return drinkTemperate; }
-    public double getPriceSizeUp() { return priceSizeUp; }
-    public double getTemperateSizeUp() { return temperateSizeUp; }
+    public double getDrinkTemperature() { return drinkTemperature; }
+    public double getHotSizeUp() { return hotSizeUp; }
+    public double getIceSizeUp() { return iceSizUp; }
     public String getCategory() { return category; }
 
     @Override
     public void Show() { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
-    public void HotSizeUp() { System.out.printf("%-20s | W %s | %s\n", getName(), priceSizeUp, getDescription()); }
-    public void IceShow() { System.out.printf("%-20s | W %s | %s\n", getName(), drinkTemperate, getDescription()); }
-    public void IceSizeUp() { System.out.printf("%-20s | W %s | %s\n", getName(), temperateSizeUp, getDescription()); }
-    //    public void ShowPrice(double price) { System.out.printf("%-20s | W %s | %s\n", getName(), price, getDescription()); }
-//    public void ShowDrinkTemperate(double priceSizeUp) { System.out.printf("%-20s | W %s | %s\n", getName(), priceSizeUp, getDescription()); }
-//    public void ShowTemperateSizeUp(double temperateSizeUp) { System.out.printf("%-20s | W %s | %s\n", getName(), temperateSizeUp, getDescription()); }
+    public void HotSizeUpShow() { System.out.printf("%-20s | W %s | %s\n", getName(), hotSizeUp, getDescription()); }
+    public void IceShow() { System.out.printf("%-20s | W %s | %s\n", getName(), drinkTemperature, getDescription()); }
+    public void IceSizeUpShow() { System.out.printf("%-20s | W %s | %s\n", getName(), iceSizUp, getDescription()); }
     public void Show(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), price, EA, getDescription()); }
-    public void HotSizeUp(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), priceSizeUp, EA,getDescription()); }
-    public void IceShow(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), drinkTemperate, EA,getDescription()); }
-    public void IceSizeUp(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), temperateSizeUp, EA,getDescription()); }
+    public void HotSizeUpShow(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), hotSizeUp, EA,getDescription()); }
+    public void IceShow(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), drinkTemperature, EA,getDescription()); }
+    public void IceSizeUpShow(int EA) { System.out.printf("%-20s | W %s | %s개 | W %s\n", getName(), iceSizUp, EA,getDescription()); }
 
 
 
@@ -68,15 +65,15 @@ public class Product extends Menu {
             Product temp = (Product)obj;
             return this.getName().equals(temp.getName()) &&
                     this.getPrice() == temp.getPrice() &&
-                    this.getDrinkTemperate() == temp.getDrinkTemperate() &&
-                    this.getPriceSizeUp() == temp.getPriceSizeUp() &&
-                    this.getTemperateSizeUp() == temp.getTemperateSizeUp() &&
+                    this.getDrinkTemperature() == temp.getDrinkTemperature() &&
+                    this.getHotSizeUp() == temp.getHotSizeUp() &&
+                    this.getIceSizeUp() == temp.getIceSizeUp() &&
                     this.getDescription().equals(temp.getDescription()) &&
                     this.getCategory().equals(temp.getCategory());
         }
         return false;
     }
     public int hashCode(){
-        return Objects.hash(getName(),getDescription(),getPrice(),getDrinkTemperate(),getPriceSizeUp(), getTemperateSizeUp(), getCategory());
+        return Objects.hash(getName(),getDescription(),getPrice(),getDrinkTemperature(),getHotSizeUp(), getIceSizeUp(), getCategory());
     }
 }

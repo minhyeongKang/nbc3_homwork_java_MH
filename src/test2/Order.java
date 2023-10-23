@@ -19,52 +19,52 @@ public class Order {
         int firstInput;
         int secondInput;
 
-        if (product.getDrinkTemperate() != 0) { // HOT or ICE 옵션이 있을때
+        if (product.getDrinkTemperature() != 0) { // HOT or ICE 옵션이 있을때
             product.Show(); // 메뉴 | W 가격 | 이름
 
             System.out.println();
             System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
-            System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + product.getDrinkTemperate() + ")");
+            System.out.println("1. HOT(W " + product.getPrice() + ")          2. ICE(W " + product.getDrinkTemperature() + ")");
             firstInput = sc.nextInt();
             if (firstInput == 1) { // HOT 음료
                 System.out.println("사이즈 업을 하시겠습니까?");
-                System.out.println("1. M(W " + product.getPrice() + ")          2. L(W " + product.getPriceSizeUp() + ")");
+                System.out.println("1. M(W " + product.getPrice() + ")          2. L(W " + product.getDrinkTemperature() + ")");
                 secondInput = sc.nextInt();
                 if (secondInput == 1) {
                     product.Show();
-                    question(product);
+                    mediumQuestion(product);
                 } else if (secondInput == 2) {
-                    product.HotSizeUp();
-                    coffeequestion(product);
+                    product.HotSizeUpShow();
+                    largeQuestion(product);
                 }
             } else if (firstInput == 2) { // ICE 음료
                 System.out.println("음료 사이즈를 골라주세요.");
-                System.out.println("1. M(W " + product.getDrinkTemperate() + ")          2. L(W " + product.getTemperateSizeUp() + ")");
+                System.out.println("1. M(W " + product.getDrinkTemperature() + ")          2. L(W " + product.getIceSizeUp() + ")");
                 secondInput = sc.nextInt();
                 if (secondInput == 1) {
                     product.IceShow();
-                    DrinkTemperatequestion(product);
+                    hotMediumQquestion(product);
                 } else if (secondInput == 2) {
-                    product.IceSizeUp();
-                    Temperatequestion(product);
+                    product.IceSizeUpShow();
+                    iceLargeQuestion(product);
                 }
             }
-        } else if(product.getDrinkTemperate() == 0 && product.getPriceSizeUp() !=0){
+        } else if(product.getDrinkTemperature() == 0 && product.getHotSizeUp() !=0){
             System.out.println("사이즈 업을 하시겠습니까?");
-            System.out.println("1. M(W " + product.getPrice() + ")          2. L(W " + product.getPriceSizeUp() + ")");
+            System.out.println("1. M(W " + product.getPrice() + ")          2. L(W " + product.getHotSizeUp() + ")");
             secondInput = sc.nextInt();
             if (secondInput == 1) {
                 product.Show();
-                question(product);
+                mediumQuestion(product);
             } else if (secondInput == 2) {
-                product.HotSizeUp();
-                coffeequestion(product);
+                product.HotSizeUpShow();
+                largeQuestion(product);
             }
         }else{
-            question(product);
+            mediumQuestion(product);
         }
     }
-    public void question (Product product) {
+    public void mediumQuestion (Product product) {
         Scanner sc = new Scanner(System.in);
         int input;
         //product.Show();
@@ -82,7 +82,7 @@ public class Order {
         }
     }
 
-    public void coffeequestion (Product product) {
+    public void largeQuestion (Product product) {
         Scanner sc = new Scanner(System.in);
         int input;
         //product.Show();
@@ -99,7 +99,7 @@ public class Order {
             System.out.println();
         }
     }
-    public void DrinkTemperatequestion (Product product) {
+    public void hotMediumQquestion (Product product) {
         Scanner sc = new Scanner(System.in);
         int input;
         //product.Show();
@@ -116,7 +116,7 @@ public class Order {
             System.out.println();
         }
     }
-    public void Temperatequestion (Product product) {
+    public void iceLargeQuestion (Product product) {
         Scanner sc = new Scanner(System.in);
         int input;
         //product.Show();
@@ -145,20 +145,20 @@ public class Order {
         HashSet<Product> productCountSet2 = new HashSet<Product>(shoppingBag2);
         for (Product item : productCountSet2) {
             EA = Collections.frequency(shoppingBag2,item);
-            item.HotSizeUp(EA);
-            totalprice += item.getPriceSizeUp() * EA; //가격계산
+            item.HotSizeUpShow(EA);
+            totalprice += item.getHotSizeUp() * EA; //가격계산
         }
         HashSet<Product> productCountSet3 = new HashSet<Product>(shoppingBag3);
         for (Product item : productCountSet3) {
             EA = Collections.frequency(shoppingBag3,item);
             item.IceShow(EA);
-            totalprice += item.getDrinkTemperate() * EA; //가격계산
+            totalprice += item.getDrinkTemperature() * EA; //가격계산
         }
         HashSet<Product> productCountSet4 = new HashSet<Product>(shoppingBag4);
         for (Product item : productCountSet4) {
             EA = Collections.frequency(shoppingBag4,item);
-            item.IceSizeUp(EA);
-            totalprice += item.getTemperateSizeUp() * EA; //가격계산
+            item.IceSizeUpShow(EA);
+            totalprice += item.getIceSizeUp() * EA; //가격계산
         }
         totalprice=Math.round((totalprice*100))/100.0;//소수점 둘째자리까지 나타내고 반올림 ( 자바는 IEEE 754 부동 소수점 방식 - 근사치 제공에 의해 소수 오차 발생 방지)
         return totalprice;
